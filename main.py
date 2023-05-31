@@ -19,3 +19,4 @@ while r != "0":
     print("\n1 - Voltar ao Menu")
     print("0 - Finalizar programa")
     r = input("Deseja sair? \n")
+
