@@ -17,9 +17,14 @@ class BancoDeDados:
 
     def inserir_documento(self, documento):
         self.col.insert_one(documento)
-        print(f"Inserido no banco")
+        print(f"Mensagem enviada")
 
     def get_messages(self, user):
         results = list(self.col.find({"to": user[0]}))
         return results
+
+    def update_was_read(self, id):
+        filtro = {"_id": id}
+        atualizacao = {"$set": {"wasRead": True}}
+        self.col.update_one(filtro, atualizacao)
 
